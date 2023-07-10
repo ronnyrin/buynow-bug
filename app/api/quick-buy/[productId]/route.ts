@@ -60,5 +60,10 @@ export async function GET(
       cartPageUrl: `${baseUrl}/cart`,
     },
   });
-  return NextResponse.json({ redirectSession, baseUrl, requestUrl });
+  return NextResponse.json({
+    redirectSession,
+    baseUrl,
+    requestUrl,
+    header: request.headers.get('x-middleware-request-url'),
+  });
 }
