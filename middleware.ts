@@ -6,6 +6,7 @@ import { WIX_REFRESH_TOKEN } from '@app/constants';
 export async function middleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   const requestUrl = request.url;
+  console.log(requestUrl);
   requestHeaders.set('x-middleware-request-url', requestUrl);
   const cookies = request.cookies;
   if (cookies.get(WIX_REFRESH_TOKEN)) {
