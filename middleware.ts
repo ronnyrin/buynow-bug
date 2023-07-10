@@ -16,6 +16,7 @@ export async function middleware(request: NextRequest) {
     request: {
       headers: requestHeaders,
     },
+    headers: requestHeaders,
   });
   const wixClient = createClient({
     modules: { cart },
