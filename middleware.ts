@@ -16,8 +16,8 @@ export async function middleware(request: NextRequest) {
     request: {
       headers: requestHeaders,
     },
-    headers: requestHeaders,
   });
+  res.headers.set('x-middleware-request-url', requestUrl);
   const wixClient = createClient({
     modules: { cart },
     auth: OAuthStrategy({ clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID! }),
