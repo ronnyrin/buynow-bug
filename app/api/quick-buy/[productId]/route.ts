@@ -60,5 +60,5 @@ export async function GET(
       cartPageUrl: `${baseUrl}/cart`,
     },
   });
-  return NextResponse.redirect(redirectSession!.fullUrl!);
+  return NextResponse.json({ redirectSession, baseUrl, requestUrl });
 }
