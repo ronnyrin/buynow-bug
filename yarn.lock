@@ -882,13 +882,13 @@ __metadata:
   linkType: hard
 
 "@wix/events@npm:^1.0.93":
-  version: 1.0.105
-  resolution: "@wix/events@npm:1.0.105"
+  version: 1.0.106
+  resolution: "@wix/events@npm:1.0.106"
   dependencies:
     "@wix/metro-runtime": ^1.0.0
     "@wix/motion-edm-autogen-query-wrapper": ^1.0.0
     "@wix/sdk-types": ^1.0.0
-  checksum: ae008e10a32701d33e915e50eb0af7fbfd2c28be68a0f7a16f11b5b7a8cef09a9c779ffa40d0402d373bca2c0007d877a658c033ed3548d2e761b264eced8f9e
+  checksum: 850ebebddce6069c62b0df8584d1387737d391bf5476fb26bf47bd516e16901171e24e0ebecb6091439dd2f6ba4468503d4b67f4c98cd73cead1f010321069d1
   languageName: node
   linkType: hard
 
