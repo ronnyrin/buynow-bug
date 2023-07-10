@@ -13,6 +13,7 @@ export async function GET(
 ) {
   const requestUrl = getRequestUrl(request);
   const baseUrl = new URL('/', requestUrl).toString();
+  console.log('in route:', 'baseUrl', baseUrl, 'requestUrl', requestUrl);
   const { searchParams } = new URL(requestUrl);
   const quantity = parseInt(searchParams.get('quantity') || '1', 10);
   const productOptions = JSON.parse(
