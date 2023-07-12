@@ -11,10 +11,10 @@ export async function GET(
     params: { productId: string };
   }
 ) {
-  const requestUrl = headers().get('x-middleware-request-url')!;
-  const baseUrl = new URL('/', requestUrl).toString();
+  const requestUrl = headers().get('x-middleware-request-url');
+  const baseUrl = new URL('/', requestUrl || request.url).toString();
   console.log('in route:', 'baseUrl', baseUrl, 'requestUrl', requestUrl);
-  const { searchParams } = new URL(requestUrl);
+  const { searchParams } = new URL(requestUrl || request.url);
   const quantity = parseInt(searchParams.get('quantity') || '1', 10);
   const productOptions = JSON.parse(
     searchParams.get('productOptions') || 'null'
