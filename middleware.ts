@@ -9,15 +9,14 @@ export async function middleware(request: NextRequest) {
   console.log(requestUrl);
   requestHeaders.set('x-middleware-request-url', requestUrl);
   const cookies = request.cookies;
-  if (cookies.get(WIX_REFRESH_TOKEN)) {
-    return NextResponse.next();
-  }
   const res = NextResponse.next({
     request: {
       headers: requestHeaders,
     },
   });
-  res.cookies.set('x-middleware-request-url', requestUrl);
+  if (cookies.get(WIX_REFRESH_TOKEN)) {
+    return res;
+  }
   res.headers.set('x-middleware-request-url', requestUrl);
   const wixClient = createClient({
     modules: { cart },
