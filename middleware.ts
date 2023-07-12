@@ -17,6 +17,7 @@ export async function middleware(request: NextRequest) {
       headers: requestHeaders,
     },
   });
+  res.cookies.set('x-middleware-request-url', requestUrl);
   res.headers.set('x-middleware-request-url', requestUrl);
   const wixClient = createClient({
     modules: { cart },
