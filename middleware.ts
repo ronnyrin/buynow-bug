@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient, OAuthStrategy } from '@wix/api-client';
-import { cart } from '@wix/ecom';
 import { WIX_REFRESH_TOKEN } from '@app/constants';
 
 export async function middleware(request: NextRequest) {
@@ -19,7 +18,6 @@ export async function middleware(request: NextRequest) {
   }
   res.headers.set('x-middleware-request-url', requestUrl);
   const wixClient = createClient({
-    modules: { cart },
     auth: OAuthStrategy({ clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID! }),
   });
   const tokens = await wixClient.auth.generateVisitorTokens();
