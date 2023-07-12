@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getWixClient } from '@app/hooks/useWixClientServer';
 import { checkout as checkoutTypes } from '@wix/ecom';
-import { headers } from 'next/headers';
+import { getRequestUrl } from '@app/utils/server-utils';
 
 export async function GET(
   request: NextRequest,
@@ -11,10 +11,10 @@ export async function GET(
     params: { productId: string };
   }
 ) {
-  const requestUrl = headers().get('x-middleware-request-url');
-  const baseUrl = new URL('/', requestUrl || request.url).toString();
+  const requestUrl = getRequestUrl(request);
+  const baseUrl = new URL('/', requestUrl).toString();
   console.log('in route:', 'baseUrl', baseUrl, 'requestUrl', requestUrl);
-  const { searchParams } = new URL(requestUrl || request.url);
+  const { searchParams } = new URL(requestUrl);
   const quantity = parseInt(searchParams.get('quantity') || '1', 10);
   const productOptions = JSON.parse(
     searchParams.get('productOptions') || 'null'
@@ -63,7 +63,7 @@ export async function GET(
   return NextResponse.json({
     redirectSession,
     baseUrl,
-    requestUrl: request.url,
-    header: requestUrl,
+    requestUrl,
+    header: request.headers.get('x-middleware-request-url'),
   });
 }
