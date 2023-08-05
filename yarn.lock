@@ -436,9 +436,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/ipx@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@netlify/ipx@npm:1.4.1"
+"@netlify/ipx@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@netlify/ipx@npm:1.4.2"
   dependencies:
     "@netlify/functions": ^1.6.0
     etag: ^1.8.1
@@ -450,17 +450,17 @@ __metadata:
     node-fetch: ^2.0.0
     ufo: ^1.0.0
     unstorage: ^1.0.0
-  checksum: a11964a47786c57bb1c768ab8b8e0b70b9c03d4bcb9a381370c22478dfd3c883df9f02940c2ea2215b0d12e50822d370e590272ac650e6a44fbb0cd40a85d6c1
+  checksum: f9a53d6c9a7d7bf50cd22a0a7402f074348219cecffb78f43d7f7b1e63a4497b718d486087f4a6b0a67cdd47bece9f434111d7bc28920d44f52eb2e918628edb
   languageName: node
   linkType: hard
 
 "@netlify/plugin-nextjs@npm:^4.36.0":
-  version: 4.39.0
-  resolution: "@netlify/plugin-nextjs@npm:4.39.0"
+  version: 4.39.3
+  resolution: "@netlify/plugin-nextjs@npm:4.39.3"
   dependencies:
     "@netlify/esbuild": 0.14.39
     "@netlify/functions": ^1.6.0
-    "@netlify/ipx": ^1.4.1
+    "@netlify/ipx": ^1.4.2
     "@vercel/node-bridge": ^2.1.0
     chalk: ^4.1.2
     chokidar: ^3.5.3
@@ -481,7 +481,7 @@ __metadata:
     semver: ^7.3.5
     slash: ^3.0.0
     tiny-glob: ^0.2.9
-  checksum: 1f88dd1329eba9af9e1d95221624dffcd0036f652c6e5b0ca99f08cfce9d3db2eff15aaf2bbdf7629a5c8a4f82d261fbcccd6075957b79788e4131e618938cee
+  checksum: 1d8dc863278f24515d2498169065a61116603beabfa43514f1cfbca21fb0838d4d5746222ba9ff73e2e3977127f1bba302f31110f6dc8350ea47b926379ba4b5
   languageName: node
   linkType: hard
 
